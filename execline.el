@@ -40,6 +40,7 @@
 
 ;;; Code:
 (eval-when-compile (require 'subr-x)) ; for when-let*
+(eval-when-compile (require 'cl-lib)) ; for incf, decf
 (require 's)
 
 (defvar execline-builtin-commands
@@ -173,9 +174,9 @@ previous line; indent same as previous line otherwise."
     (let ((new-indent prev-indent)
           (at-bol?    (eq (point) (line-beginning-position))))
       (when (s-ends-with?   "{" (s-trim-right prev))
-        (incf new-indent))
+        (cl-incf new-indent))
       (when (s-starts-with? "}" (s-trim-left  this))
-        (decf new-indent))
+        (cl-decf new-indent))
       (save-excursion
         (beginning-of-line)
         (indent-to-column (* tab-width new-indent)))

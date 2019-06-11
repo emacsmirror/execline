@@ -1,0 +1,4 @@
+pipeline {
+	foo
+	ba|r
+}
