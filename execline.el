@@ -1,4 +1,4 @@
-;;; execline.el --- major mode for editing execline scripts  -*- lexical-binding: t; -*-
+;;; execline.el --- Major mode for editing execline scripts  -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2019  Dmitry Bogatov
 
@@ -7,6 +7,7 @@
 ;; Version: 0.1
 ;; Package-Requires: ((emacs "26.1") (s "1.6.0"))
 ;; License: GPL v3
+;; Homepage: https://gitlab.com/KAction/emacs-execline
 
 ;; This program is free software; you can redistribute it and/or modify it
 ;; under the terms of the GNU General Public License as published by the Free
