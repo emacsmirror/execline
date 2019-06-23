@@ -216,6 +216,7 @@ For more information about execline, visit https://skarnet.org/software/execline
 (modify-syntax-entry ?\. "_" execline-mode-syntax-table)
 (modify-syntax-entry ?\- "_" execline-mode-syntax-table)
 
+;;;###autoload
 (add-to-list 'auto-mode-alist '("\\.ex$" . execline-mode))
 
 (provide 'execline)
