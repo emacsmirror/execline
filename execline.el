@@ -207,7 +207,7 @@ For more information about execline, visit https://skarnet.org/software/execline
   (setq-local comment-start "#")
   (setq-local font-lock-defaults '((execline-font-lock-keywords)))
   (setq-local indent-line-function #'execline-indent-line-function)
-  (add-to-list 'completion-at-point-functions #'execline-completion-at-point))
+  (setq-local completion-at-point-functions '(execline-completion-at-point)))
 
 ; Name of variable can contain anything, except $, { and }.
 ;
