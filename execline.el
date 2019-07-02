@@ -172,8 +172,7 @@ previous line; indent same as previous line otherwise."
          (this (execline--current-line))
          (prev-indent (execline--count-leading-whitespace prev)))
     (execline--strip-leading-whitespaces)
-    (let ((new-indent prev-indent)
-          (at-bol?    (eq (point) (line-beginning-position))))
+    (let ((new-indent prev-indent))
       (when (s-ends-with?   "{" (s-trim-right prev))
         (cl-incf new-indent))
       (when (s-starts-with? "}" (s-trim-left  this))
@@ -182,7 +181,8 @@ previous line; indent same as previous line otherwise."
         (beginning-of-line)
         (indent-to-column (* tab-width new-indent)))
       ;; See note [Indenting empty line]
-      (when (and at-bol? (> new-indent 0)) (forward-whitespace 1)))))
+      (when (and (bolp) (> new-indent 0))
+        (forward-whitespace 1)))))
 
 (defvar execline-font-lock-keywords
   (let ((keywords-rx         (regexp-opt execline-builtin-commands 'words))
