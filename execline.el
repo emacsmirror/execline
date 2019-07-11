@@ -218,6 +218,8 @@ For more information about execline, visit https://skarnet.org/software/execline
 
 ;;;###autoload
 (add-to-list 'auto-mode-alist '("\\.exec\\'" . execline-mode))
+;;;###autoload
+(add-to-list 'interpreter-mode-alist '("execlineb" . execline-mode))
 
 (provide 'execline)
 ;;; execline.el ends here
